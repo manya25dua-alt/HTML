@@ -1,0 +1,47 @@
+<html>
+<head>
+    <style>
+        .loader {
+            width: 70px;
+            height: 70px;
+
+            border: 8px solid lightgray;
+            border-top: 8px solid green;
+            border-radius: 50%;
+
+            margin: 50px auto 10px;
+        }
+
+        .controls {
+            width: 90px;
+            margin: auto;
+        }
+
+        /* Start spinning when checkbox is checked */
+        body:has(#start:checked) .loader {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="loader"></div>
+
+    <div class="controls">
+        <input type="checkbox" id="start">
+        <label for="start">Loading</label>
+    </div>
+
+</body>
+</html>
