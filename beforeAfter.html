@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Ordered List</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+ol.custom-steps {
+    list-style: none;
+    counter-reset: count;
+    padding: 0;
+}
+
+ol.custom-steps li {
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: 20px;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+ol.custom-steps li::before {
+    counter-increment: count;
+    content: counter(count);
+    display: flex;
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background-color: lightseagreen;
+    color: ghostwhite;
+    font-weight: bold;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.original {
+    display: none;
+}
+
+#toggle:checked ~ .custom-steps {
+    display: none;
+}
+
+#toggle:checked ~ .original {
+    display: block;
+}
+</style>
+
+</head>
+<body>
+
+<input type="checkbox" id="toggle">
+
+<label for="toggle">Show Original List</label>
+
+<ol class="custom-steps">
+    <li>Wake up early.</li>
+    <li>Brush your teeth.</li>
+    <li>Take a bath.</li>
+    <li>Have breakfast.</li>
+    <li>Go to college.</li>
+</ol>
+
+<ol class="original">
+    <li>Wake up early.</li>
+    <li>Brush your teeth.</li>
+    <li>Take a bath.</li>
+    <li>Have breakfast.</li>
+    <li>Go to college.</li>
+</ol>
+
+</body>
+</html>
