@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SignUp Form</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:darkslategrey;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+/* ================= OUTER BOX ================= */
+
+.outer-box{
+    width:900px;
+    border:3px double lightskyblue;
+    padding:30px;
+}
+
+.outer-box legend{
+    color:white;
+    font-size:22px;
+    font-weight:bold;
+    padding:0 10px;
+    margin-left:20px;
+}
+
+/* ================= FORM BOX ================= */
+
+.container{
+    width:550px;
+    margin:20px auto;
+    background:grey;
+    border:3px solid black;
+    padding:20px;
+
+    box-shadow:
+        3px 3px 10px rgba(255,255,255,0.8),
+        0 0 8px rgba(0,0,0,0.4);
+}
+
+.container h2{
+    text-align:center;
+    border:2px solid black;
+    padding:10px;
+    margin-bottom:15px;
+}
+
+/* ================= TABLE ================= */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+td{
+    border:1px solid darkblue;
+    padding:15px;
+}
+
+td:first-child{
+    width:40%;
+}
+
+/* ================= INPUTS ================= */
+
+input[type="text"],
+input[type="email"]{
+    width:170px;
+    padding:6px;
+    background:darkgreen;
+    border:1px solid darkblue;
+    outline:none;
+    transition:.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus{
+    background:white;
+}
+
+/* ================= BUTTONS ================= */
+
+.buttons{
+    text-align:center;
+}
+
+button{
+    padding:7px 20px;
+    margin:5px;
+    background:#74d9ff;
+    border:1px solid darkblue;
+    cursor:pointer;
+
+    box-shadow:0 0 10px white;
+}
+
+button:hover{
+    background:#40c5f7;
+    box-shadow:0 0 15px white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<fieldset class="outer-box">
+
+    <legend>SignUp Form</legend>
+
+    <div class="container">
+
+        <h2>Please fill the below Signup Form</h2>
+
+        <table>
+
+            <tr>
+                <td>Username</td>
+                <td><input type="text"></td>
+            </tr>
+
+            <tr>
+                <td>First Name</td>
+                <td><input type="text"></td>
+            </tr>
+
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text"></td>
+            </tr>
+
+            <tr>
+                <td>Email</td>
+                <td><input type="email"></td>
+            </tr>
+
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="gender"> Male
+                    &nbsp;&nbsp;
+                    <input type="radio" name="gender"> Female
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" class="buttons">
+                    <button type="submit">SUBMIT</button>
+                    <button type="reset">RESET</button>
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</fieldset>
+
+</body>
+</html>
