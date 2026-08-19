@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Square Effects</title>
+
+    <style>
+        #square {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin: 30px;
+            transition: all 1s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Apply Effects to Square</h2>
+
+    <div id="square"></div>
+
+    <br>
+
+    <input type="radio" name="effect" onclick="applyEffect('circle')">
+    Make Circle
+
+    <input type="radio" name="effect" onclick="applyEffect('rotate')">
+    Rotate
+
+    <input type="radio" name="effect" onclick="applyEffect('scale')">
+    Increase Size
+
+    <input type="radio" name="effect" onclick="applyEffect('color')">
+    Change Color
+
+    <input type="radio" name="effect" onclick="applyEffect('normal')">
+    Normal
+
+
+    <script>
+
+        function applyEffect(effect) {
+
+            let square = document.getElementById("square");
+
+            if (effect == "circle") {
+                square.style.borderRadius = "50%";
+            }
+
+            else if (effect == "rotate") {
+                square.style.transform = "rotate(360deg)";
+            }
+
+            else if (effect == "scale") {
+                square.style.transform = "scale(1.5)";
+            }
+
+            else if (effect == "color") {
+                square.style.backgroundColor = "red";
+            }
+
+            else if (effect == "normal") {
+                square.style.borderRadius = "0";
+                square.style.transform = "none";
+                square.style.backgroundColor = "blue";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
