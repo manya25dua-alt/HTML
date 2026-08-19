@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table Styling</title>
+
+    <style>
+        #mytab {
+            border-collapse: collapse;
+        }
+
+        #mytab th,
+        #mytab td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .section {
+            margin-top: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Change the color of the table</h2>
+
+    <table id="mytab" border="1" width="50%">
+
+        <tr id="heading">
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+
+        <tr>
+            <td>Ram</td>
+            <td>ram123@gmail.com</td>
+        </tr>
+
+        <tr>
+            <td>Shruti</td>
+            <td>shruti1321@gmail.com</td>
+        </tr>
+
+    </table>
+
+
+    <!-- SECTION 1 -->
+    <div class="section">
+        <b>1. Select background color for the table</b><br>
+
+        <input type="radio" name="bgcolor" onclick="tableColor('yellow')">
+        Yellow
+
+        <input type="radio" name="bgcolor" onclick="tableColor('grey')">
+        Grey
+
+        <input type="radio" name="bgcolor" onclick="tableColor('green')">
+        Green
+
+        <input type="radio" name="bgcolor" onclick="tableColor('cyan')">
+        Cyan
+    </div>
+
+
+    <!-- SECTION 2 -->
+    <div class="section">
+        <b>2. Select background color for heading row</b><br>
+
+        <input type="radio" name="headingcolor" onclick="headingColor('yellow')">
+        Yellow
+
+        <input type="radio" name="headingcolor" onclick="headingColor('grey')">
+        Grey
+
+        <input type="radio" name="headingcolor" onclick="headingColor('green')">
+        Green
+
+        <input type="radio" name="headingcolor" onclick="headingColor('cyan')">
+        Cyan
+    </div>
+
+
+    <!-- SECTION 3 -->
+    <div class="section">
+        <b>3. Select color for table text</b><br>
+
+        <input type="radio" name="textcolor" onclick="textColor('red')">
+        Red
+
+        <input type="radio" name="textcolor" onclick="textColor('blue')">
+        Blue
+
+        <input type="radio" name="textcolor" onclick="textColor('green')">
+        Green
+
+        <input type="radio" name="textcolor" onclick="textColor('black')">
+        Black
+    </div>
+
+
+    <!-- SECTION 4 -->
+    <div class="section">
+        <b>4. Apply shadow to the table</b><br>
+
+        <input type="checkbox" id="shadow" onclick="applyShadow()">
+        Apply Shadow
+    </div>
+
+
+    <script>
+
+        // Section 1: Table background color
+        function tableColor(color) {
+            document.getElementById("mytab").style.backgroundColor = color;
+        }
+
+
+        // Section 2: Heading background color
+        function headingColor(color) {
+            document.getElementById("heading").style.backgroundColor = color;
+        }
+
+
+        // Section 3: Table text color
+        function textColor(color) {
+            document.getElementById("mytab").style.color = color;
+        }
+
+
+        // Section 4: Table shadow
+        function applyShadow() {
+
+            let table = document.getElementById("mytab");
+            let checkbox = document.getElementById("shadow");
+
+            if (checkbox.checked == true) {
+                table.style.boxShadow = "5px 5px 10px grey";
+            }
+            else {
+                table.style.boxShadow = "none";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
