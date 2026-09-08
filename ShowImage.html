@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Preview</title>
+</head>
+
+<body>
+
+    <input type="file" id="ImageInput" accept="image/*">
+
+    <button id="btn1">Show Image</button>
+
+    <br><br>
+
+    <img id="preview" style="display: none; width: 300px;">
+
+    <script>
+        const input = document.getElementById("ImageInput");
+        const preview = document.getElementById("preview");
+
+        document.getElementById("btn1").addEventListener("click", function() {
+
+            const file = input.files[0];
+
+            if (file) {
+                console.log(file.name);
+                console.log(file.size);
+                console.log(file.type);
+
+                const imageURL = URL.createObjectURL(file);
+
+                preview.src = imageURL;
+                preview.style.display = "block";
+            } 
+            else {
+                console.log("No file selected");
+            }
+
+        });
+    </script>
+
+</body>
+</html>
