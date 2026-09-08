@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Image Preview</title>
+</head>
+
+<body>
+
+    <input type="file" id="imageInput" multiple accept="image/*">
+
+    <br><br>
+
+    <div id="previewContainer"></div>
+
+    <script>
+
+        const input = document.getElementById('imageInput');
+        const container = document.getElementById('previewContainer');
+
+        input.addEventListener('change', function () {
+
+            // Clear previous previews
+            container.innerHTML = '';
+
+            const files = input.files;
+
+            for (let i = 0; i < files.length; i++) {
+
+                const file = files[i];
+
+                console.log("Name:", file.name);
+                console.log("Size:", file.size);
+                console.log("Type:", file.type);
+
+                if (file.type.startsWith('image/')) {
+
+                    const imageURL = URL.createObjectURL(file);
+
+                    const preview = document.createElement('img');
+
+                    preview.src = imageURL;
+                    preview.width = 300;
+                    preview.style.margin = '10px';
+
+                    container.appendChild(preview);
+                }
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
