@@ -1,0 +1,58 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Image Preview Using Button</title>
+
+    <style>
+        #container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        #container img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="file" id="imageInput" accept="image/*" multiple>
+
+    <button id="btn1">Show Images</button>
+
+    <div id="container"></div>
+
+    <script>
+        const input = document.getElementById("imageInput");
+        const container = document.getElementById("container");
+
+        document.getElementById("btn1").addEventListener("click", function() {
+
+            container.innerHTML = "";
+
+            const files = input.files;
+
+            for (let i = 0; i < files.length; i++) {
+
+                const imageURL = URL.createObjectURL(files[i]);
+
+                const img = document.createElement("img");
+
+                img.src = imageURL;
+
+                container.appendChild(img);
+            }
+        });
+    </script>
+
+</body>
+</html>
+```
