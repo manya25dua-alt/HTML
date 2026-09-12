@@ -1,0 +1,98 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Moon Orbiting Earth</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .space {
+            width: 600px;
+            height: 600px;
+            position: relative;
+        }
+
+        /* Earth */
+        .earth {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle at 30% 30%, #4fc3f7, #1565c0, #001f54);
+            border-radius: 50%;
+
+            position: absolute;
+            top: 225px;
+            left: 225px;
+
+            box-shadow: 0 0 40px #2196f3;
+        }
+
+        /* Orbit path */
+        .orbit {
+            width: 450px;
+            height: 450px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+
+            position: absolute;
+            top: 75px;
+            left: 75px;
+
+            animation: rotate 8s linear infinite;
+        }
+
+        /* Moon */
+        .moon {
+            width: 50px;
+            height: 50px;
+
+            background: radial-gradient(circle at 30% 30%, white, #aaa, #555);
+            border-radius: 50%;
+
+            position: absolute;
+            top: -25px;
+            left: 200px;
+
+            box-shadow: 0 0 15px white;
+        }
+
+        @keyframes rotate {
+
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="space">
+
+        <div class="earth"></div>
+
+        <div class="orbit">
+            <div class="moon"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+```
