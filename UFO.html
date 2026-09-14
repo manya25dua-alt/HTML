@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flying UFO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background: #050510;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* UFO */
+.ufo {
+    position: relative;
+    width: 250px;
+    height: 180px;
+
+    animation: fly 4s ease-in-out infinite;
+}
+
+/* UFO dome */
+.dome {
+    position: absolute;
+    width: 100px;
+    height: 55px;
+
+    background: #9be7ff;
+    border-radius: 100px 100px 0 0;
+
+    top: 20px;
+    left: 75px;
+
+    box-shadow: 0 0 25px #00eaff;
+}
+
+/* UFO body */
+.body {
+    position: absolute;
+
+    width: 250px;
+    height: 80px;
+
+    top: 65px;
+
+    background: linear-gradient(
+        to bottom,
+        #777,
+        #222
+    );
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 20px #00eaff,
+        0 0 50px rgba(0, 234, 255, 0.4);
+}
+
+/* UFO lights */
+.body span {
+    position: absolute;
+
+    width: 15px;
+    height: 15px;
+
+    background: #00ffff;
+    border-radius: 50%;
+
+    bottom: 15px;
+
+    box-shadow: 0 0 15px #00ffff;
+
+    animation: blink 0.8s infinite alternate;
+}
+
+.body span:nth-child(1) {
+    left: 45px;
+}
+
+.body span:nth-child(2) {
+    left: 95px;
+    animation-delay: 0.2s;
+}
+
+.body span:nth-child(3) {
+    left: 145px;
+    animation-delay: 0.4s;
+}
+
+.body span:nth-child(4) {
+    left: 195px;
+    animation-delay: 0.6s;
+}
+
+/* UFO beam */
+.light {
+    position: absolute;
+
+    width: 170px;
+    height: 120px;
+
+    top: 110px;
+    left: 40px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 255, 255, 0.3),
+        transparent
+    );
+
+    clip-path: polygon(
+        25% 0,
+        75% 0,
+        100% 100%,
+        0 100%
+    );
+
+    animation: beam 1.5s infinite alternate;
+}
+
+/* Flying movement */
+@keyframes fly {
+
+    0% {
+        transform: translate(-300px, -50px) rotate(-5deg);
+    }
+
+    50% {
+        transform: translate(0, 50px) rotate(5deg);
+    }
+
+    100% {
+        transform: translate(300px, -50px) rotate(-5deg);
+    }
+}
+
+/* Blinking lights */
+@keyframes blink {
+
+    from {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+/* Beam animation */
+@keyframes beam {
+
+    from {
+        opacity: 0.2;
+        transform: scaleX(0.8);
+    }
+
+    to {
+        opacity: 0.7;
+        transform: scaleX(1.1);
+    }
+}
+</style>
+
+<body>
+
+    <div class="ufo">
+
+        <div class="light"></div>
+
+        <div class="dome"></div>
+
+        <div class="body">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+
+</body>
+</html>
