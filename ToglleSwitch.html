@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Toggle Switch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+}
+
+/* Toggle container */
+.switch {
+    position: relative;
+    width: 80px;
+    height: 40px;
+}
+
+/* Hide default checkbox */
+.switch input {
+    display: none;
+}
+
+/* Toggle background */
+.slider {
+    position: absolute;
+    inset: 0;
+
+    background: #444;
+    border-radius: 40px;
+
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+/* Toggle circle */
+.slider::before {
+    content: "";
+
+    position: absolute;
+    width: 32px;
+    height: 32px;
+
+    left: 4px;
+    top: 4px;
+
+    background: white;
+    border-radius: 50%;
+
+    transition: 0.4s;
+}
+
+/* When checked */
+.switch input:checked + .slider {
+    background: #00e5ff;
+    box-shadow: 0 0 20px #00e5ff;
+}
+
+/* Move circle */
+.switch input:checked + .slider::before {
+    transform: translateX(40px);
+}
+</style>
+<body>
+
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+    </label>
+
+</body>
+</html>
