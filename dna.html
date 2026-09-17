@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNA Helix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: #050510;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+/* DNA container */
+
+.dna {
+    position: relative;
+    width: 220px;
+    height: 500px;
+
+    transform-style: preserve-3d;
+
+    animation: rotateDNA 6s linear infinite;
+}
+
+/* Two DNA strands */
+
+.strand {
+    position: absolute;
+
+    width: 35px;
+    height: 450px;
+
+    border: 6px solid;
+    border-radius: 50%;
+
+    top: 25px;
+}
+
+.strand1 {
+    left: 35px;
+    border-color: #00e5ff;
+    transform: rotateY(35deg);
+}
+
+.strand2 {
+    right: 35px;
+    border-color: #ff00cc;
+    transform: rotateY(-35deg);
+}
+
+/* DNA pairs */
+
+.pair {
+    position: absolute;
+
+    width: 150px;
+    height: 8px;
+
+    left: 35px;
+
+    background: linear-gradient(
+        to right,
+        #00e5ff,
+        #ffffff,
+        #ff00cc
+    );
+
+    box-shadow:
+        0 0 10px #00e5ff,
+        0 0 10px #ff00cc;
+
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.pair::before,
+.pair::after {
+    content: "";
+
+    position: absolute;
+
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+
+    top: -4px;
+}
+
+.pair::before {
+    left: -5px;
+    background: #00e5ff;
+}
+
+.pair::after {
+    right: -5px;
+    background: #ff00cc;
+}
+
+/* Positions */
+
+.p1 { top: 45px; }
+.p2 { top: 100px; animation-delay: .1s; }
+.p3 { top: 155px; animation-delay: .2s; }
+.p4 { top: 210px; animation-delay: .3s; }
+.p5 { top: 265px; animation-delay: .4s; }
+.p6 { top: 320px; animation-delay: .5s; }
+.p7 { top: 375px; animation-delay: .6s; }
+.p8 { top: 430px; animation-delay: .7s; }
+
+/* Rotation */
+
+@keyframes rotateDNA {
+
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+
+}
+
+/* Glow animation */
+
+@keyframes pulse {
+
+    0%, 100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+    </style>
+
+<body>
+
+    <div class="dna">
+
+        <div class="strand strand1"></div>
+        <div class="strand strand2"></div>
+
+        <div class="pair p1"><span></span></div>
+        <div class="pair p2"><span></span></div>
+        <div class="pair p3"><span></span></div>
+        <div class="pair p4"><span></span></div>
+        <div class="pair p5"><span></span></div>
+        <div class="pair p6"><span></span></div>
+        <div class="pair p7"><span></span></div>
+        <div class="pair p8"><span></span></div>
+
+    </div>
+
+</body>
+</html>
