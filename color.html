@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #111;
+
+    font-family: Arial, sans-serif;
+}
+
+/* Main card */
+
+.container {
+    width: 850px;
+    padding: 40px;
+
+    background: #1b1b1b;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Heading */
+
+h1 {
+    color: white;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #aaa;
+    margin-bottom: 35px;
+}
+
+/* Palette */
+
+.palette {
+    display: flex;
+
+    height: 300px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+}
+
+/* Color blocks */
+
+.color {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+    padding-bottom: 25px;
+
+    transition: 0.4s;
+}
+
+.color span {
+    background: rgba(0, 0, 0, 0.35);
+
+    color: white;
+
+    padding: 10px 15px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+}
+
+/* Colors */
+
+.color1 {
+    background: #6C63FF;
+}
+
+.color2 {
+    background: #00C9A7;
+}
+
+.color3 {
+    background: #FF6584;
+}
+
+.color4 {
+    background: #FFC75F;
+}
+
+.color5 {
+    background: #845EC2;
+}
+
+/* Hover */
+
+.color:hover {
+    flex: 1.5;
+}
+
+/* Button */
+
+button {
+    margin-top: 30px;
+
+    padding: 15px 35px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: linear-gradient(
+        90deg,
+        #6C63FF,
+        #00C9A7
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 25px rgba(108, 99, 255, 0.4);
+}
+</style>
+<body>
+
+    <div class="container">
+
+        <h1>Color Palette</h1>
+
+        <p class="subtitle">
+            Create beautiful color combinations
+        </p>
+
+        <div class="palette">
+
+            <div class="color color1">
+                <span>#6C63FF</span>
+            </div>
+
+            <div class="color color2">
+                <span>#00C9A7</span>
+            </div>
+
+            <div class="color color3">
+                <span>#FF6584</span>
+            </div>
+
+            <div class="color color4">
+                <span>#FFC75F</span>
+            </div>
+
+            <div class="color color5">
+                <span>#845EC2</span>
+            </div>
+
+        </div>
+
+        <button>Generate Palette</button>
+
+    </div>
+
+</body>
+</html>
