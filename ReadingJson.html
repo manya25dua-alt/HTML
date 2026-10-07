@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="jsondata"></p>
+    <script type="module">
+        import userdata from '.users.json' with{type:"json"};
+        let name=JSON.stringify(userdata.username);
+        let pwd=JSON.stringify(userdata.password);
+        document.getElementById("jsondata").innerHTML=`username is ${uname}<br>
+        password id ${pwd}`;
+
+    </script>
+</body>
+</html>
