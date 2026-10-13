@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+</head>
+<body>
+
+    <h2>Login Form</h2>
+
+    <form id="SigninForm" onsubmit="writeFile(event)">
+        <label>Username:</label>
+        <input type="text" id="username" required>
+        <br><br>
+
+        <label>Password:</label>
+        <input type="password" id="password" required>
+        <br><br>
+
+        <button type="submit">SUBMIT</button>
+    </form>
+
+    <a id="a" style="display: none;">Download JSON</a>
+
+    <script>
+        function writeFile(event) {
+            event.preventDefault();
+
+            let userdata = {
+                username: document.getElementById("username").value,
+                password: document.getElementById("password").value
+            };
+
+            let jsonData = JSON.stringify(userdata, null, 2);
+
+            let blob = new Blob([jsonData], {
+                type: "application/json"
+            });
+
+            let url = URL.createObjectURL(blob);
+
+            let a = document.getElementById("a");
+            a.href = url;
+            a.download = "userData.json";
+            a.click();
+
+            URL.revokeObjectURL(url);
+        }
+    </script>
+
+</body>
+</html>
