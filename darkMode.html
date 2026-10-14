@@ -1,0 +1,25 @@
+<style>
+    body{
+        padding:25px;
+        background-color: white;
+        color:black;
+        font-size:25px;
+
+    }
+    .dark-mode{
+        background-color: black;
+        color:white;
+    }
+</style>
+<body>
+    <h2>Toggle Dark/Light Mode</h2>
+    <p>Click the button to toggle dark mode on this page!</p>
+    <button onclick="drkmode()">Toggle Dark Mode</button>
+    <script>
+        function drkmode(){
+            let element=document.body;
+            element.classList.toggle("dark-mode");
+
+        }
+    </script>
+</body>
