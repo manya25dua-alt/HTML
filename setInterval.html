@@ -1,0 +1,16 @@
+<body>
+    <h1 id="h1"></h1>
+    <button id="btn" onClick="countdownTimer(5);">S T A R T</button>
+</body>
+<script>
+    function countdownTimer(seconds){
+        const countdown=setInterval(function(){
+            seconds--;
+            if(seconds<0){
+                clearInterval(countdown);
+            }
+            else
+            document.getElementById('h1').innerText=seconds;
+        },1000);
+    }
+</script>
