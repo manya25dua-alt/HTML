@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chitkara Alphabet Animation</title>
+    <style>
+        #container {
+            text-align: center;
+            font-size: 40px;
+            margin-top: 100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <script>
+        let word = "CHITKARA";
+        let i = 0;
+
+        function displayLetter() {
+            if (i < word.length) {
+                document.getElementById("container").innerHTML += word[i];
+                i++;
+
+                setTimeout(displayLetter, 1000);
+            }
+        }
+
+        displayLetter();
+    </script>
+
+</body>
+</html>
